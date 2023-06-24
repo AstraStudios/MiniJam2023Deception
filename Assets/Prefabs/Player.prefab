@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 7
-  jumpForce: 1200
+  jumpForce: 2000
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8256
