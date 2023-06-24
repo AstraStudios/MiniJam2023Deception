@@ -4,20 +4,42 @@ using UnityEngine;
 
 public class Clone : MonoBehaviour
 {
-    Collider2D collider;
+    [SerializeField] GameObject evilClone;
+    Collider2D _collider;
+
+    [SerializeField] float friendlyTime = 15f;
+    private float timeCreatedAt;
+
+    private bool dragging = false;
 
     private void Awake()
     {
-        collider = GetComponent<Collider2D>();
+        _collider = GetComponent<Collider2D>();
+        timeCreatedAt = Time.time;
+    }
+
+    private void Update()
+    {
+        if (dragging)
+            friendlyTime += Time.deltaTime;
+
+        if (timeCreatedAt + friendlyTime <= Time.time)
+        {
+            Instantiate(evilClone, transform.position, Quaternion.identity);
+
+            Destroy(gameObject);
+        }
     }
 
     public void StartDragging()
     {
-        collider.excludeLayers = LayerMask.GetMask("Player");
+        _collider.excludeLayers = LayerMask.GetMask("Player");
+        dragging = true;
     }
 
     public void EndDragging()
     {
-        collider.excludeLayers = 0;
+        _collider.excludeLayers = 0;
+        dragging = false;
     }
 }
