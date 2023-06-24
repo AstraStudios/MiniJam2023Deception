@@ -6,6 +6,7 @@ public class CloneGrabber : MonoBehaviour
 {
     private GameObject grabed;
     private Rigidbody2D grabedRb;
+    private Clone cloneScript;
 
     private Vector3 grabedOffset;
 
@@ -26,6 +27,10 @@ public class CloneGrabber : MonoBehaviour
                 grabed = hit.collider.gameObject;
                 grabedRb = grabed.GetComponent<Rigidbody2D>();
 
+                // disable interactions w/ player collider
+                cloneScript = grabed.GetComponent<Clone>();
+                cloneScript.StartDragging();
+
                 grabedOffset = grabed.transform.position - transform.position;
             }
         }
@@ -35,6 +40,9 @@ public class CloneGrabber : MonoBehaviour
         {
             grabed = null;
             grabedRb = null;
+
+            cloneScript.EndDragging();
+            cloneScript = null;
         }
 
         // move held object
