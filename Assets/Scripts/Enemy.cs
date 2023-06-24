@@ -18,8 +18,6 @@ public class Enemy : MonoBehaviour
     {
         Vector3 direction = (transform.position - player.position).normalized;
 
-        print(direction);
-
         rb.MovePosition(transform.position - direction * movementSpeed);
     }
 
