@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float runSpeed = 7f;
     [SerializeField] private float jumpForce = 1200f;                          // Amount of force added when the player jumps.
+    [SerializeField] private float jumpSlowMovement = 5f;
 
-    [SerializeField] private LayerMask whatIsGround;                          // A mask determining what is ground to the character
     [SerializeField] private Transform groundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] SpriteRenderer spriteRenderer;
 
@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     float horizontalMove = 0f;
     bool jump = false;
+    bool wasGrounded;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxis("Horizontal") * runSpeed * Time.deltaTime;
+        horizontalMove = Input.GetAxis("Horizontal") * (wasGrounded ? runSpeed : runSpeed/jumpSlowMovement) * Time.deltaTime;
 
         transform.Translate(horizontalMove, 0, 0);
 
@@ -40,19 +41,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Move our character
-        Move(jump);
-        jump = false;
-
-        bool wasGrounded = grounded;
-        grounded = false;
-
         // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
         // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] colliders = CombineArrays<Collider2D>(
-            Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround),
-            Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, LayerMask.GetMask("Clone"))
-            );
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, LayerMask.GetMask("Clone", "Ground"));
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
@@ -60,6 +51,14 @@ public class PlayerMovement : MonoBehaviour
                 grounded = true;
             }
         }
+
+        // Move our character
+        Move(jump);
+        jump = false;
+
+        wasGrounded = grounded;
+        grounded = false;
+
     }
 
     void Move(bool jump)
