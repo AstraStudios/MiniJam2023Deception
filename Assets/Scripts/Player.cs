@@ -13,15 +13,12 @@ public class Player : MonoBehaviour
         spawnPosition = gameObject.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Death()
     {
-        Instantiate(clone, transform.position, Quaternion.identity);
+        GameObject newClone = Instantiate(clone, transform.position, Quaternion.identity);
+        newClone.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
+        newClone.GetComponent<SpriteRenderer>().flipX = transform.GetChild(1).GetComponent<SpriteRenderer>().flipX;
+
         transform.position = spawnPosition;
     }
 }
