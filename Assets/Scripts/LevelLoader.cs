@@ -36,6 +36,7 @@ public class LevelLoader : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         loadNextText.SetActive(false);
+        inZone = false;
     }
 
     void LoadLevel()
