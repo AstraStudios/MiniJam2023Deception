@@ -6,12 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     float horizontalMove = 0f;
 
-    float runSpeed = 15f;
+    float runSpeed = 10f;
     bool jump = false;
 
-    [SerializeField] private float jumpForce = 400f;                          // Amount of force added when the player jumps.
+    private float jumpForce = 400f;                          // Amount of force added when the player jumps.
     [SerializeField] private LayerMask whatIsGround;                          // A mask determining what is ground to the character
     [SerializeField] private Transform groundCheck;                           // A position marking where to check if the player is grounded.
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool grounded;            // Whether or not the player is grounded.
@@ -33,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
+
+        FlipCharacter();
     }
 
     private void FixedUpdate()
@@ -66,4 +69,12 @@ public class PlayerMovement : MonoBehaviour
             rb2D.AddForce(new Vector2(0f, jumpForce));
         }
     }
+
+    void FlipCharacter()
+    {
+        if (horizontalMove > 0)
+            spriteRenderer.flipX = false;
+        if (horizontalMove < 0)
+            spriteRenderer.flipX = true;
+    } 
 }
