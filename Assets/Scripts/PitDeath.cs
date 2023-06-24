@@ -7,10 +7,12 @@ public class PitDeath : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject clone;
 
+    Player playerScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerScript = player.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -23,9 +25,7 @@ public class PitDeath : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // spawn clone
-            Instantiate(clone, collision.gameObject.transform.position, Quaternion.identity);
-            player.transform.position = new Vector2(0, -3);
+            playerScript.Death();
         }
     }
 }

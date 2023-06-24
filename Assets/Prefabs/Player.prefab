@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1825871891934810193}
   - component: {fileID: 6809178782058606969}
   - component: {fileID: 6781739279968395968}
+  - component: {fileID: 5800250038242902145}
   - component: {fileID: 3540769470612979387}
   - component: {fileID: 8826638008640527516}
   m_Layer: 9
@@ -127,6 +128,19 @@ MonoBehaviour:
   jumpSlowMovement: 1.5
   groundCheck: {fileID: 4967385933901632029}
   spriteRenderer: {fileID: 9108658569585675930}
+--- !u!114 &5800250038242902145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560287226377013755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba55ef7932bb541a2a6b46feb7a233da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clone: {fileID: 8179318604800039938, guid: 17bc2a397a919784cb8c50f52a0d2df3, type: 3}
 --- !u!114 &3540769470612979387
 MonoBehaviour:
   m_ObjectHideFlags: 0
