@@ -5,7 +5,6 @@ using UnityEngine;
 public class PitDeath : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] GameObject clone;
 
     Player playerScript;
 
