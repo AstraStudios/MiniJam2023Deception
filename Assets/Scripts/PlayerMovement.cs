@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float horizontalMove = 0f;
+    [SerializeField] float runSpeed = 7f;
+    [SerializeField] private float jumpForce = 1000f;                          // Amount of force added when the player jumps.
 
-    float runSpeed = 10f;
-    bool jump = false;
-
-    private float jumpForce = 400f;                          // Amount of force added when the player jumps.
     [SerializeField] private LayerMask whatIsGround;                          // A mask determining what is ground to the character
     [SerializeField] private Transform groundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -17,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private bool grounded;            // Whether or not the player is grounded.
     private Rigidbody2D rb2D;
+
+    float horizontalMove = 0f;
+    bool jump = false;
 
     private void Start()
     {
