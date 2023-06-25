@@ -6,7 +6,6 @@ using TMPro;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] string levelToLoad;
 
     bool inZone;
 
@@ -38,6 +37,6 @@ public class LevelLoader : MonoBehaviour
 
     void LoadLevel()
     {
-        SceneManager.LoadScene(levelToLoad, LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1, LoadSceneMode.Single);
     }
 }
