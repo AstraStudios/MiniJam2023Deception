@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa245fe944ce4a9f81123abfdbc8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Seth Level 4
+  levelToLoad: Level1
 --- !u!114 &331631650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3332,7 +3332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa245fe944ce4a9f81123abfdbc8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level1
+  levelToLoad: Seth Level 4
 --- !u!114 &923821452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5291,7 +5291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1916022624
 MonoBehaviour:
   m_ObjectHideFlags: 0
