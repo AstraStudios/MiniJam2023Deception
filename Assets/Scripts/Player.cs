@@ -9,16 +9,22 @@ public class Player : MonoBehaviour
 
     Vector2 spawnPosition;
 
+    Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
         spawnPosition = gameObject.transform.position;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
-            transform.position = spawnPosition;
+            Respawn();
+
+        if (transform.position.y <= -10)
+            Respawn();
     }
 
     public void Death()
@@ -28,6 +34,12 @@ public class Player : MonoBehaviour
         newClone.GetComponent<SpriteRenderer>().flipX = transform.GetChild(1).GetComponent<SpriteRenderer>().flipX;
         newClone.GetComponent<Clone>().turnEvil = clonesTurnEvil;
 
+        Respawn();
+    }
+
+    public void Respawn()
+    {
+        rb.velocity = Vector3.zero;
         transform.position = spawnPosition;
     }
 }
