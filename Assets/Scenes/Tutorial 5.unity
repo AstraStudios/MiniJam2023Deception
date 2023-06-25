@@ -1375,6 +1375,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5800250038242902145, guid: 287065e166f1f774292ae2c68f76ce0c, type: 3}
+      propertyPath: clonesTurnEvil
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
