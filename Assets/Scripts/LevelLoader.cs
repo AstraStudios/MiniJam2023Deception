@@ -7,7 +7,6 @@ using TMPro;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] string levelToLoad;
-    [SerializeField] GameObject loadNextText;
 
     bool inZone;
 
@@ -28,14 +27,12 @@ public class LevelLoader : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            loadNextText.SetActive(true);
             inZone = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        loadNextText.SetActive(false);
         inZone = false;
     }
 
