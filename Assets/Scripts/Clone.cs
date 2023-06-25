@@ -7,7 +7,8 @@ public class Clone : MonoBehaviour
     [SerializeField] GameObject evilClone;
     public bool turnEvil = true;
 
-    Collider2D _collider;
+    Collider2D collider_;
+    SpriteRenderer renderer_;
 
     [SerializeField] float friendlyTime = 15f;
     private float timeCreatedAt;
@@ -16,7 +17,8 @@ public class Clone : MonoBehaviour
 
     private void Awake()
     {
-        _collider = GetComponent<Collider2D>();
+        collider_ = GetComponent<Collider2D>();
+        renderer_ = GetComponent<SpriteRenderer>();
         timeCreatedAt = Time.time;
     }
 
@@ -32,6 +34,16 @@ public class Clone : MonoBehaviour
         if (dragging)
             friendlyTime += Time.deltaTime;
 
+        // flash red
+        renderer_.color = new Color(1, 1, 1);
+        if (timeCreatedAt + friendlyTime - 3 <= Time.time && // 3 seconds left
+            turnEvil &&
+            Mathf.Floor(Time.time * 2 % 2) == 1) // red or not
+        {
+            renderer_.color = new Color(1, 0, 0);
+        }
+
+        // turn into evil clones
         if (timeCreatedAt + friendlyTime <= Time.time && turnEvil)
         {
             Instantiate(evilClone, transform.position, Quaternion.identity);
@@ -42,13 +54,13 @@ public class Clone : MonoBehaviour
 
     public void StartDragging()
     {
-        _collider.excludeLayers = LayerMask.GetMask("Player");
+        collider_.excludeLayers = LayerMask.GetMask("Player");
         dragging = true;
     }
 
     public void EndDragging()
     {
-        _collider.excludeLayers = 0;
+        collider_.excludeLayers = 0;
         dragging = false;
     }
 }
