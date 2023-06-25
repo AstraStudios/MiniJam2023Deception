@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Vector2 spawnPosition;
     [SerializeField] GameObject clone;
+    [SerializeField] bool clonesTurnEvil = true;
+
+    Vector2 spawnPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class Player : MonoBehaviour
         GameObject newClone = Instantiate(clone, transform.position, Quaternion.identity);
         newClone.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
         newClone.GetComponent<SpriteRenderer>().flipX = transform.GetChild(1).GetComponent<SpriteRenderer>().flipX;
+        newClone.GetComponent<Clone>().turnEvil = clonesTurnEvil;
 
         transform.position = spawnPosition;
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Clone : MonoBehaviour
 {
     [SerializeField] GameObject evilClone;
+    public bool turnEvil = true;
+
     Collider2D _collider;
 
     [SerializeField] float friendlyTime = 15f;
@@ -23,7 +25,7 @@ public class Clone : MonoBehaviour
         if (dragging)
             friendlyTime += Time.deltaTime;
 
-        if (timeCreatedAt + friendlyTime <= Time.time)
+        if (timeCreatedAt + friendlyTime <= Time.time && turnEvil)
         {
             Instantiate(evilClone, transform.position, Quaternion.identity);
 
