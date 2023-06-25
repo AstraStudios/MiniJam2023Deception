@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   evilClone: {fileID: 4407742165757885376, guid: 018f377d8b2b70548a55c3af3ea05675, type: 3}
   turnEvil: 1
-  friendlyTime: 5
+  friendlyTime: 10
