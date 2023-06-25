@@ -20,6 +20,13 @@ public class Clone : MonoBehaviour
         timeCreatedAt = Time.time;
     }
 
+    private void Start()
+    {
+        // make only 20% turn evil
+        if (turnEvil && Random.value >= .2)
+            turnEvil = false;
+    }
+
     private void Update()
     {
         if (dragging)
