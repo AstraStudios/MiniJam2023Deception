@@ -11,6 +11,7 @@ public class MusicHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         audioPlayer = gameObject.GetComponent<AudioSource>();
         audioPlayer.loop = false;
         PlayNextClip();
