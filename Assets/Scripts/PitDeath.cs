@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PitDeath : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    GameObject player;
 
     Player playerScript;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         playerScript = player.GetComponent<Player>();
     }
 

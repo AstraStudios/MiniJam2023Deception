@@ -15,6 +15,12 @@ public class Player : MonoBehaviour
         spawnPosition = gameObject.transform.position;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+            transform.position = spawnPosition;
+    }
+
     public void Death()
     {
         GameObject newClone = Instantiate(clone, transform.position, Quaternion.identity);
