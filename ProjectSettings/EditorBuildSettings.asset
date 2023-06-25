@@ -30,11 +30,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial 5.unity
     guid: 371e664d6a0e0f4419305b7349876b93
   - enabled: 1
+    path: Assets/Scenes/Seth Level 1.unity
+    guid: 6ef6c0a1eca8c094b9c2242b54aed5d3
+  - enabled: 1
+    path: Assets/Scenes/Seth Level 4.unity
+    guid: f7f62f0f0e23921418a68837be79fe70
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: a326c65de42f3427992fc9a0576dfca5
   - enabled: 1
+    path: Assets/Scenes/Seth Level 2.unity
+    guid: ef6eec8f4d78abc40a715b2a32285970
+  - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 4d740094eca3142a9ab1a680bc65f29d
+  - enabled: 1
+    path: Assets/Scenes/Seth Level 3.unity
+    guid: 446b5c6bbd0d0b44f8cc62ed3dfa78cb
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 45edcd916ea0a44128c1f969fdc40587
