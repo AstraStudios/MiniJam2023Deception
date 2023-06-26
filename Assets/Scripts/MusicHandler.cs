@@ -8,27 +8,34 @@ public class MusicHandler : MonoBehaviour
     AudioSource audioPlayer;
     int currentClipIndex = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
         audioPlayer = gameObject.GetComponent<AudioSource>();
         audioPlayer.loop = false;
+        currentClipIndex = Random.Range(0, audioClips.Count - 1);
         PlayNextClip();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!audioPlayer.isPlaying)
+            PlayNextClip();
     }
 
     void PlayNextClip()
     {
-        currentClipIndex = Random.Range(0, audioClips.Count);
         audioPlayer.clip = audioClips[currentClipIndex];
 
         currentClipIndex++;
+        currentClipIndex %= audioClips.Count - 1;
         audioPlayer.Play();
     }
 }

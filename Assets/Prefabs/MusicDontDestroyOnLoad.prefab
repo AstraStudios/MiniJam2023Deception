@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4555985256978990182
 MonoBehaviour:
@@ -47,7 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: c4dd019e2ea1540cea80e2aa3bba9abd, type: 3}
-  - {fileID: 8300000, guid: 8b099760de40645eea7089875c77dc26, type: 3}
   - {fileID: 8300000, guid: 1f4bf87edc0a64cbd8178ce85b99f009, type: 3}
   - {fileID: 8300000, guid: 6100846fcb8884155a5290d268e81ebc, type: 3}
   - {fileID: 8300000, guid: c38b86f68aaad4ed6afdc9ff13abf91d, type: 3}
