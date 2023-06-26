@@ -431,7 +431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -304, y: -193}
+  m_AnchoredPosition: {x: 0, y: 34.326}
   m_SizeDelta: {x: 196.5316, y: 68.6513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &275040430
@@ -1369,10 +1369,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.7
-  m_fontSizeBase: 24
+  m_fontSize: 34.41
+  m_fontSizeBase: 34.41
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -27.55
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1577,7 +1577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2733089572701143964, guid: 018f377d8b2b70548a55c3af3ea05675, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 2733089572701143964, guid: 018f377d8b2b70548a55c3af3ea05675, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3955,7 +3955,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Special kingdom 2
+  m_text: Castle Clones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f7cbc47fca0257e4d8b22a1f5b5095a9, type: 2}
   m_sharedMaterial: {fileID: 1271221319747614839, guid: f7cbc47fca0257e4d8b22a1f5b5095a9, type: 2}
@@ -3982,7 +3982,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.25
+  m_fontSize: 65.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
