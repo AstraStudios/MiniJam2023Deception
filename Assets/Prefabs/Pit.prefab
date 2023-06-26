@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 7407787836157274907}
   - component: {fileID: 348034438920295861}
   - component: {fileID: 3088620961299436405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeathChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
