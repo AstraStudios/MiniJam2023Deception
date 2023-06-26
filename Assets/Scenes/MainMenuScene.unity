@@ -4226,7 +4226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa245fe944ce4a9f81123abfdbc8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Seth Level 5
+  levelToLoad: Level4
 --- !u!114 &1186286829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5517,7 +5517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa245fe944ce4a9f81123abfdbc8968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level4
+  levelToLoad: Seth Level 5
 --- !u!114 &1796882800
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -54,11 +54,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Level3.unity
     guid: 45edcd916ea0a44128c1f969fdc40587
   - enabled: 1
-    path: Assets/Scenes/Seth Level 5.unity
-    guid: a3be81bb69038a54996619e6163c344e
-  - enabled: 1
     path: Assets/Scenes/Level4.unity
     guid: f4772f4d167b640218030fbede8131d7
+  - enabled: 1
+    path: Assets/Scenes/Seth Level 5.unity
+    guid: a3be81bb69038a54996619e6163c344e
   - enabled: 1
     path: Assets/Scenes/FinalScene.unity
     guid: 967570c05e70940d981d3003e8ec2557
