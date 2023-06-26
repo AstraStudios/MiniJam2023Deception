@@ -25,7 +25,7 @@ public class Clone : MonoBehaviour
     private void Start()
     {
         // make only 20% turn evil
-        if (turnEvil && Random.value >= .2)
+        if (turnEvil && Random.value >= .2f)
             turnEvil = false;
     }
 
@@ -36,7 +36,7 @@ public class Clone : MonoBehaviour
 
         // flash red
         renderer_.color = new Color(1, 1, 1);
-        if (timeCreatedAt + friendlyTime - 3 <= Time.time && // 3 seconds left
+        if (timeCreatedAt + friendlyTime - 5 <= Time.time && // 3 seconds left
             turnEvil &&
             Mathf.Floor(Time.time * 2 % 2) == 1) // red or not
         {
